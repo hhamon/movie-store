@@ -12,14 +12,44 @@ class MovieTable extends Doctrine_Table
         return Doctrine_Core::getTable('Movie');
     }
 
-    public function getAll()
+    public function getDirectors()
     {
         $q = $this
             ->createQuery('m')
-            ->orderBy('m.shot_year DESC')
+            ->select('m.director')
+            ->distinct()
+            ->orderBy('m.director ASC')
+        ;
+
+        $directors = array();
+        foreach ($q->execute(array(), Doctrine_Core::HYDRATE_ARRAY) as $row) {
+            $directors[ $row['director'] ] = $row['director'];
+        }
+
+        return $directors;
+    }
+
+    public function getAll()
+    {
+        return $this->getStandardMovieQuery()->execute();
+    }
+
+    public function getByCategory($type)
+    {
+        $q = $this
+            ->getStandardMovieQuery()
+            ->where('m.type = ?', $type)
         ;
 
         return $q->execute();
+    }
+
+    public function getStandardMovieQuery()
+    {
+        return $this
+            ->createQuery('m')
+            ->orderBy('m.shot_year DESC')
+        ;
     }
 
     static public function getMovieSupports()

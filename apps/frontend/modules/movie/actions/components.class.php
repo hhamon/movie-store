@@ -6,4 +6,13 @@ class movieComponents extends sfComponents
     {
         $this->categories = MovieTable::getMovieTypes();
     }
+
+    public function executeSearch(sfWebRequest $request)
+    {
+        $this->form = new MovieSearchFormFilter();
+
+        if ($request->isMethod('POST')) {
+            $this->form->bind($request->getParameter($this->form->getName()));
+        }
+    }
 }

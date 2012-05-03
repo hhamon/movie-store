@@ -13,7 +13,10 @@ class MovieFormFilter extends BaseMovieFormFilter
     public function configure()
     {
         $this->widgetSchema['type'] = new sfWidgetFormChoice(array(
-            'choices' => MovieTable::getMovieTypes(),
+            'choices' => array_merge(
+                array('' => ''),
+                MovieTable::getMovieTypes()
+            ),
         ));
     }
 

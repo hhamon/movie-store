@@ -7,9 +7,16 @@ homepage:
   param:        { module: movie, action: index }
 
 buy_movie:
-  url:          /movies/buy/:slug
+  url:          /:sf_culture/movies/buy/:slug
   param:        { module: order, action: buy }
+  requirements: { sf_culture: en|fr }
 
 category:
-  url:          /movies/:category
+  url:          /:sf_culture/movies/:category
   param:        { module: movie, action: category }
+  requirements: { sf_culture: en|fr }
+
+search:
+  url:          /:sf_culture/search
+  param:        { module: movie, action: search }
+  requirements: { sf_culture: en|fr }

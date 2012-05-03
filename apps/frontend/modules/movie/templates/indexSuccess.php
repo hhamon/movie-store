@@ -1,12 +1,13 @@
 <?php use_helper('Number', 'Movie', 'Text') ?>
-<?php slot('title', 'Movies list') ?>
+<?php slot('title', __('Movies list')) ?>
+<?php $keyword = isset($keyword) ? $keyword : '' ?>
 
 <?php foreach ($movies as $movie) : ?>
 
     <div class="leftbox">
         <h3>
             <?php echo $movie->getShotYear() ?> -
-            <?php echo $movie->getTitle() ?>
+            <?php echo highlight_text($movie->getTitle(), $keyword) ?>
         </h3>
 
     <?php if ($movie->getImage()) : ?>
@@ -17,25 +18,34 @@
     <?php endif ?>
 
         <p>
-            <strong>Price:</strong>
+            <strong><?php echo __('Price') ?></strong>
             <strong>
                 <?php echo format_currency($movie->getPrice(), 'EUR') ?>
             </strong>
             <br/>
-            <strong>Director:</strong>
+            <strong><?php echo __('Director') ?></strong>
             <strong><?php echo $movie->getDirector() ?></strong>
             <br/>
-            <strong>Category:</strong>
+            <strong><?php echo __('Category') ?></strong>
             <strong><?php echo movie_category($movie->getType()) ?></strong>
             <br/>
-            <strong>Duration:</strong>
-            <strong><?php echo $movie->getDuration() ?> min.</strong>
+            <strong><?php echo __('Duration') ?></strong>
+            <strong>
+                <?php echo format_number_choice(
+                    '[1]1 minute|(1,+Inf]%duration% minutes',
+                    array('%duration%' => $movie->getDuration()),
+                    $movie->getDuration()
+                ) ?>
+            </strong>
             <br/>
-            <strong>Support:</strong>
+            <strong><?php echo __('Support') ?></strong>
             <strong><?php echo movie_support($movie->getSupport()) ?></strong>
         </p>
 
-        <?php echo simple_format_text($movie->getSynopsis()) ?>
+        <?php echo simple_format_text(highlight_text(
+            $movie->getSynopsis(),
+            $keyword
+        )) ?>
 
         <p class="readmore">
             <a href="<?php echo url_for('buy_movie', array('slug' => $movie->getSlug())) ?>">

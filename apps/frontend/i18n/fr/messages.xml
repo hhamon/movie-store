@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xliff PUBLIC "-//XLIFF//DTD XLIFF//EN" "http://www.oasis-open.org/committees/xliff/documents/xliff.dtd">
+<xliff version="1.0">
+  <file source-language="EN" target-language="fr" datatype="plaintext" original="messages" date="2012-05-03T11:00:22Z" product-name="messages">
+    <header/>
+    <body>
+      <trans-unit id="1">
+        <source>Movies list</source>
+        <target>Liste des films</target>
+      </trans-unit>
+      <trans-unit id="2">
+        <source>Price</source>
+        <target>Prix :</target>
+      </trans-unit>
+      <trans-unit id="3">
+        <source>Director</source>
+        <target>Réalisateur :</target>
+      </trans-unit>
+      <trans-unit id="4">
+        <source>Category</source>
+        <target>Catégorie :</target>
+      </trans-unit>
+      <trans-unit id="5">
+        <source>Duration</source>
+        <target>Durée :</target>
+      </trans-unit>
+      <trans-unit id="6">
+        <source>[1]1 minute|(1,+Inf]%duration% minutes</source>
+        <target>[1]1 min.|(1,+Inf]%duration% minutes</target>
+      </trans-unit>
+      <trans-unit id="7">
+        <source>Support</source>
+        <target>Support :</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

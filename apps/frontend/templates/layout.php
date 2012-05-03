@@ -26,10 +26,7 @@
 
               <dt>Search </dt>
                 <dd class="searchform">
-                  <form action="?" method="get">
-                    <div><input name="q" type="text" value="Keyword" class="text" /></div>
-                    <div class="softright"><input type="image" src="/images/btn_search.gif" /></div>
-                  </form>
+                  <?php include_component('movie', 'search') ?>
                 </dd>
               </dl>
 
