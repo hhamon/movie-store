@@ -16,7 +16,15 @@
         <div id="header">
           <h1>Online Movie Store</h1>
             <div id="nav">
-              <a href="http://www.dreamtemplatestudio.com">Home</a> | <a href="http://www.dreamtemplatestudio.com">Stores</a> | <a href="http://www.dreamtemplatestudio.com">New Movies</a> | <a href="http://www.dreamtemplatestudio.com">your account</a> | <a href="http://www.dreamtemplatestudio.com">view cart</a> | <a href="http://www.dreamtemplatestudio.com">help</a>
+              <?php echo link_to('Home', 'homepage') ?> | 
+              <?php echo link_to('Your Account', 'account') ?> | 
+
+            <?php if ($sf_user->isAuthenticated()) : ?>
+
+              <?php echo link_to('Logout', 'sf_guard_signout') ?> | 
+
+            <?php endif ?>
+
               </div><!-- end nav -->
               <img src="/images/banner.jpg" width="744" height="200" alt="" />
             </div><!-- end header -->

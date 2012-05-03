@@ -6,6 +6,11 @@ homepage:
   url:          /
   param:        { module: movie, action: index }
 
+account:
+  url:          /:sf_culture/account
+  param:        { module: account, action: index }
+  requirements: { sf_culture: en|fr }
+
 buy_movie:
   url:          /:sf_culture/movies/buy/:slug
   param:        { module: order, action: buy }
@@ -20,3 +25,18 @@ search:
   url:          /:sf_culture/search
   param:        { module: movie, action: search }
   requirements: { sf_culture: en|fr }
+
+sf_guard_register:
+    url:          /:sf_culture/register
+    param:        { module: sfGuardRegister, action: index }
+    requirements: { sf_culture: en|fr }
+
+sf_guard_signout:
+    url:          /:sf_culture/logout
+    param:        { module: sfGuardAuth, action: signout }
+    requirements: { sf_culture: en|fr }
+
+sf_guard_signin:
+    url:          /:sf_culture/login
+    param:        { module: sfGuardAuth, action: signin }
+    requirements: { sf_culture: en|fr }

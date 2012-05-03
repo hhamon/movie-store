@@ -29,6 +29,10 @@ dev:
       delivery_strategy: none
 
 all:
+  storage:
+    param:
+      session_name: movie_admin
+
   routing:
     class: sfPatternRouting
     param:

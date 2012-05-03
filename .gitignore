@@ -3,7 +3,10 @@ cache/*
 log/*
 lib/vendor/*
 lib/model/doctrine/base/*
+lib/model/doctrine/*/base/*
 lib/form/doctrine/base/*
+lib/form/doctrine/*/base/*
 lib/filter/doctrine/base/*
+lib/filter/doctrine/*/base/*
 data/sql/*
 web/uploads/*

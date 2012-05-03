@@ -34,6 +34,11 @@ all:
     # Enable the database manager
     use_database:           true
 
+    login_module:           sfGuardAuth
+    login_action:           signin
+
+    enabled_modules:        [ default, sfGuardAuth, sfGuardRegister ]
+
     i18n:                   true
     default_culture:        fr
     standard_helpers:       [ Cache, Partial, I18N ]

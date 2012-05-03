@@ -14,7 +14,9 @@ generator:
     config:
       actions:
         _new:            { label: Add a new movie }
-        _edit:           { label: Modify }
+        _edit:           { label: Modify, credentials: [ ADMIN ] }
+        _delete:         { credentials: [ ADMIN ] }
+        offer:           { credentials: [ ADMIN ] }
       fields:
         image:           { label: Cover }
         price:           { help:  "Price must be in Euro." }
