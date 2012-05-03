@@ -11,9 +11,14 @@ account:
   param:        { module: account, action: index }
   requirements: { sf_culture: en|fr }
 
-buy_movie:
+order:
+  url:          /:sf_culture/order
+  param:        { module: order, action: order }
+  requirements: { sf_culture: en|fr }
+
+cart_add:
   url:          /:sf_culture/movies/buy/:slug
-  param:        { module: order, action: buy }
+  param:        { module: order, action: addMovie }
   requirements: { sf_culture: en|fr }
 
 category:

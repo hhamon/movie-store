@@ -13,6 +13,7 @@ MovieOrder:
         amount:       { type: float }
         vat:          { type: float }
         total:        { type: float }
+        status:       { type: string, length: 10, notnull: true, default: 'created' }
     relations:
         Owner:
             class:        sfGuardUser

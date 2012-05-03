@@ -48,7 +48,7 @@
         )) ?>
 
         <p class="readmore">
-            <a href="<?php echo url_for('buy_movie', array('slug' => $movie->getSlug())) ?>">
+            <a href="<?php echo url_for('cart_add', array('slug' => $movie->getSlug())) ?>">
                 <img alt="" src="/images/buy.gif"/>
             </a>
         </p>
