@@ -1,0 +1,7 @@
+all:
+  doctrine:
+    class: sfDoctrineDatabase
+    param:
+      dsn:      mysql:host=localhost;dbname=sl_movie_store
+      username: root
+      password: ~

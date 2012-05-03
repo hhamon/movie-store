@@ -1,0 +1,48 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           Movie
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              movie
+    plural:                movies
+    route_prefix:          movie
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions:
+        _new:            { label: Add a new movie }
+        _edit:           { label: Modify }
+      fields:
+        image:           { label: Cover }
+        price:           { help:  "Price must be in Euro." }
+        duration:        { help:  "Duration must be in minutes." }
+        synopsis:
+          attributes:    { rows: 10, cols: 60 }
+      list:
+        actions:
+          _new:          ~
+          toto:          { label: Do coffee }
+        batch_actions:   { }
+        sort:            [title, asc]
+        max_per_page:    3
+        title:           Movies manager
+        display:         [_image, =title, director, shot_year, price]
+        object_actions:
+          _edit:         ~
+          offer:         { label: Free, action: offer }
+      filter:
+        display:         [title, director, shot_year, price, type]
+      form:
+        display:
+          "General information": [ title, synopsis, director, shot_year ]
+          "Ranking":             [ duration, support, type]
+          "Selling":             [ price ]
+          "Media":               [ image ]
+          "Metas":               [ _created_at, _updated_at ]
+      edit:
+        title:        Edit movie "%%title%%"
+      new:
+        title:        Create a new movie

@@ -1,0 +1,21 @@
+Movie:
+    actAs:
+        Timestampable: ~
+        Sluggable:
+            fields: [title]
+    columns:
+        id:
+            type: integer
+            primary: true
+            notnull: true
+            autoincrement: true
+
+        title:    { type: string, notnull: true }
+        synopsis: { type: clob, notnull: true }
+        director: { type: string, notnull: true, length: 30 }
+        shot_year: { type: integer, notnull: true, length: 4, unsigned: true }
+        duration:  { type: integer, notnull: true, length: 4, unsigned: true }
+        support:   { type: string, length: 10, notnull: true, default: dvd }
+        type:      { type: string, length: 40 }
+        image:     { type: string }
+        price:     { type: float, unsigned: true, notnull: true }
