@@ -12,6 +12,16 @@ class MovieTable extends Doctrine_Table
         return Doctrine_Core::getTable('Movie');
     }
 
+    public function getAll()
+    {
+        $q = $this
+            ->createQuery('m')
+            ->orderBy('m.shot_year DESC')
+        ;
+
+        return $q->execute();
+    }
+
     static public function getMovieSupports()
     {
         return array(

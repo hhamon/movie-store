@@ -4,22 +4,12 @@
 # default rules
 homepage:
   url:          /
-  param:        { module: default, action: index }
+  param:        { module: movie, action: index }
 
-hello:
-  url:          /hello/:name
-  param:        { module: demo, action: index, name: world, menu: whoami }
-  requirements: { name: "[a-zA-Z]+" }
+buy_movie:
+  url:          /movies/buy/:slug
+  param:        { module: order, action: buy }
 
-greet:
-  url:          /greet
-  param:        { module: demo, action: greet }
-
-# generic rules
-# please, remove them by adding more specific rules
-default_index:
-  url:   /:module
-  param: { action: index }
-
-default:
-  url:   /:module/:action/*
+category:
+  url:          /movies/:category
+  param:        { module: movie, action: category }

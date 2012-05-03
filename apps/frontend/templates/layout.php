@@ -22,19 +22,7 @@
             </div><!-- end header -->
             <dl id="browse">
               <dt>Movies Category Lists</dt>
-              <dd class="first"><a href="http://www.dreamtemplatestudio.com">Action &amp; Adventure</a></dd>
-              <dd><a href="http://www.dreamtemplatestudio.com">Anime &amp; Manga</a></dd>
-              <dd><a href="http://www.dreamtemplatestudio.com">Art House &amp; International</a></dd>
-              <dd><a href="http://www.dreamtemplatestudio.com">Classics</a></dd>
-              <dd><a href="http://www.dreamtemplatestudio.com">Comedy</a></dd>
-              <dd><a href="http://www.dreamtemplatestudio.com">Cult Movies</a></dd>
-              <dd><a href="http://www.dreamtemplatestudio.com">Drama</a></dd>
-              <dd><a href="http://www.dreamtemplatestudio.com">New &amp; Future Releases</a></dd>
-              <dd><a href="http://www.dreamtemplatestudio.com">Horror</a></dd>
-              <dd><a href="http://www.dreamtemplatestudio.com">Musicals</a></dd>
-              <dd><a href="http://www.dreamtemplatestudio.com">Mystery &amp; Suspense</a></dd>
-              <dd><a href="http://www.dreamtemplatestudio.com">Science Fiction &amp; Fantasy</a></dd>
-              <dd class="last"><a href="http://www.dreamtemplatestudio.com">Westerns</a></dd>
+              <?php include_component('movie', 'categories') ?>
 
               <dt>Search </dt>
                 <dd class="searchform">
