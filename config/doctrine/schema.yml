@@ -1,3 +1,50 @@
+MovieOrder:
+    actAs:
+        Timestampable: ~
+    columns:
+        id:
+            type: integer
+            primary: true
+            notnull: true
+            autoincrement: true
+
+        user_id:      { type: integer, notnull: true }
+        reference:    { type: string, length: 10, notnull: true, unique: true }
+        amount:       { type: float }
+        vat:          { type: float }
+        total:        { type: float }
+    relations:
+        Owner:
+            class:        sfGuardUser
+            local:        user_id
+            foreign:      id
+            foreignAlias: Orders
+            onDelete:     CASCADE
+
+MovieOrderItem:
+    columns:
+        id:
+            type: integer
+            primary: true
+            notnull: true
+            autoincrement: true
+
+        order_id:         { type: integer, notnull: true }
+        movie_id:         { type: integer, notnull: true }
+        unit_price:       { type: float, notnull: true }
+        quantity:         { type: integer, notnull: true, default: 1 }
+    relations:
+        Order:
+            class:        MovieOrder
+            local:        order_id
+            foreign:      id
+            foreignAlias: Items
+            onDelete:     CASCADE
+        Movie:
+            class:        Movie
+            local:        movie_id
+            foreign:      id
+
 Movie:
     actAs:
         Timestampable: ~
