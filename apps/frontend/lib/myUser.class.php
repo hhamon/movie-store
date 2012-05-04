@@ -11,6 +11,16 @@ class myUser extends sfGuardSecurityUser
         return array_count_values($cart);
     }
 
+    public function getOrder()
+    {
+        return $this->getAttribute('order_ref');
+    }
+
+    public function removeOrder()
+    {
+        $this->attributeHolder->remove('order_ref');
+    }
+
     public function setOrder($reference)
     {
         $this->attributeHolder->remove('cart');

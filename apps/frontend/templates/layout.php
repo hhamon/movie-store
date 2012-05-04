@@ -19,6 +19,12 @@
               <?php echo link_to('Home', 'homepage') ?> | 
               <?php echo link_to('Your Account', 'account') ?> | 
 
+            <?php if ($sf_user->getOrder() || $sf_user->getCart()) : ?>
+
+              <?php echo link_to('Your order', 'order') ?> | 
+
+            <?php endif ?>
+
             <?php if ($sf_user->isAuthenticated()) : ?>
 
               <?php echo link_to('Logout', 'sf_guard_signout') ?> | 

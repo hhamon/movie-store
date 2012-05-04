@@ -14,6 +14,10 @@ MovieOrder:
         vat:          { type: float }
         total:        { type: float }
         status:       { type: string, length: 10, notnull: true, default: 'created' }
+        address:      { type: clob }
+        zip_code:     { type: string, length: 20 }
+        country:      { type: string, length: 100 }
+
     relations:
         Owner:
             class:        sfGuardUser

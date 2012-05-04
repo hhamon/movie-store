@@ -28,6 +28,11 @@ class MovieOrder extends BaseMovieOrder
         $this->cart = $cart;
     }
 
+    public function setReference($reference)
+    {
+        $this->_set('reference', substr($reference, 0, 10));
+    }
+
     public function updateAmount()
     {
         $amount = 0;

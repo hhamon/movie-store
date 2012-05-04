@@ -12,6 +12,9 @@ class accountActions extends sfActions
 {
     public function executeIndex(sfWebRequest $request)
     {
+        $table = MovieOrderTable::getInstance();
+        $user  = $this->getUser()->getGuardUser();
 
+        $this->orders = $table->findUserOrders($user->getId());
     }
 }

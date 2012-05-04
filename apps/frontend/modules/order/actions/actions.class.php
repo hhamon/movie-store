@@ -12,18 +12,52 @@ class orderActions extends sfActions
 {
     public function executeOrder(sfWebRequest $request)
     {
-        $cart = $this->getUser()->getCart();
-        $this->forward404Unless($cart);
+        $user = $this->getUser();
+
+        $this->forwardIf($user->getOrder(), 'order', 'editOrder');
+        $this->forward404Unless($cart = $user->getCart());
 
         $table = MovieOrderTable::getInstance();
 
-        $this->order = $table->newOrder($cart);
-        $this->order->setOwner($this->getUser()->getGuardUser());
-        $this->order->setReference('MV-'.uniqid());
-        $this->order->updateAmount();
-        $this->order->save();
+        $order = $table->newOrder($cart);
+        $order->setOwner($user->getGuardUser());
+        $order->setReference('MV-'.uniqid());
+        $order->updateAmount();
+        $order->save();
 
-        $this->getUser()->setOrder($this->order->getReference());
+        $user->setOrder($order->getReference());
+
+        $this->redirect('order_edit');
+    }
+
+    public function executeEditOrder(sfWebRequest $request)
+    {
+        $user = $this->getUser();
+
+        $this->forward404Unless($reference = $user->getOrder());
+
+        $table = MovieOrderTable::getInstance();
+        $this->forward404Unless($this->order = $table->findOrder($reference));
+
+        $this->form = new MovieOrderForm($this->order, array(
+            'confirm_order' => $request->hasParameter('confirm_order'),
+        ));
+
+        if ($request->isMethod('POST')) {
+            $this->form->bind($request->getParameter($this->form->getName()));
+            if ($this->form->isValid()) {
+                $this->form->save();
+
+                if ($request->hasParameter('confirm_order')) {
+                    $user->removeOrder();
+                    $this->redirect('account');
+                }
+
+                $this->redirect('order_edit');
+            }
+        }
+
+        $this->setTemplate('order');
     }
 
     public function executeAddMovie(sfWebRequest $request)

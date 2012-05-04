@@ -10,7 +10,14 @@
  */
 class MovieOrderItemForm extends BaseMovieOrderItemForm
 {
-  public function configure()
-  {
-  }
+    public function configure()
+    {
+        $this->useFields(array('quantity'));
+
+        $this->validatorSchema['quantity']->setOption('required', true);
+        $this->validatorSchema['quantity']->setOption('min', 1);
+        $this->validatorSchema['quantity']->setOption('max', 10);
+
+        $this->widgetSchema->setNameFormat('item[%s]');
+    }
 }
