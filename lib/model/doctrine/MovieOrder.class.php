@@ -36,8 +36,8 @@ class MovieOrder extends BaseMovieOrder
     public function updateAmount()
     {
         $amount = 0;
-        $vat = 0;
-        $total = 0;
+        $vat    = 0;
+        $total  = 0;
 
         foreach ($this->getItems() as $item) {
             $amount += $item->getUnitPrice() * $item->getQuantity();
@@ -48,6 +48,21 @@ class MovieOrder extends BaseMovieOrder
         $this->setAmount($amount);
         $this->setVat($vat);
         $this->setTotal($amount + $vat);
+    }
+
+    public function setAmount($amount)
+    {
+        $this->_set('amount', round($amount, 2));
+    }
+
+    public function setVat($vat)
+    {
+        $this->_set('vat', round($vat, 2));
+    }
+
+    public function setTotal($total)
+    {
+        $this->_set('total', round($total, 2));
     }
 
     public function init()
