@@ -49,7 +49,7 @@
 
         <p class="readmore">
             <a href="<?php echo url_for('cart_add', array('slug' => $movie->getSlug())) ?>">
-                <img alt="" src="/images/buy.gif"/>
+                <img alt="<?php echo __('Buy now') ?>" src="/images/buy.gif"/>
             </a>
         </p>
         <div class="clear"></div>

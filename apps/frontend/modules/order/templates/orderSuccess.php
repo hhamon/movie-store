@@ -65,9 +65,7 @@
                 <th colspan="3">
                     <?php echo $form->renderHiddenFields() ?>
                     <button type="submit"><?php echo __('Update') ?></button>
-                    <button type="submit" name="confirm_order">
-                        <?php echo __('Confirm') ?>
-                    </button>
+                    <button type="submit" name="confirm_order"><?php echo __('Confirm') ?></button>
                 </th>
             <tr>
         </tfoot>
