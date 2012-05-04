@@ -10,6 +10,59 @@ class MovieOrderTest extends PHPUnit_Framework_TestCase
         $this->assertEquals('MV-1234567', $order->getReference());
     }
 
+    public function testUpdateAmoutWithMocks()
+    {
+        $items = array(
+            $this->getMovieOrderItemMock(2, 10),
+            $this->getMovieOrderItemMock(4, 5),
+            $this->getMovieOrderItemMock(1, 12),
+        );
+
+        $collection = $this
+            ->getMockBuilder('Doctrine_Collection')
+            ->disableOriginalConstructor()
+            ->setMethods(array('getIterator'))
+            ->getMock()
+        ;
+        $collection
+            ->expects($this->any())
+            ->method('getIterator')
+            ->will($this->returnValue(new ArrayIterator($items)))
+        ;
+
+        $order = new MovieOrder();
+        $order->set('Items', $collection);
+        $order->updateAmount();
+
+        $this->assertEquals(52, $order->getAmount());
+        $this->assertEquals(10.19, $order->getVat());
+        $this->assertEquals(62.19, $order->getTotal());
+    }
+
+    private function getMovieOrderItemMock($quantity, $price)
+    {
+        $mock = $this
+            ->getMockBuilder('MovieOrderItem')
+            ->disableOriginalConstructor()
+            ->setMethods(array('getUnitPrice', 'getQuantity'))
+            ->getMock()
+        ;
+
+        $mock
+            ->expects($this->once())
+            ->method('getUnitPrice')
+            ->will($this->returnValue($price))
+        ;
+
+        $mock
+            ->expects($this->once())
+            ->method('getQuantity')
+            ->will($this->returnValue($quantity))
+        ;
+
+        return $mock;
+    }
+
     public function testUpdateAmount()
     {
         $movie1 = new Movie();

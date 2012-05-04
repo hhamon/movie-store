@@ -81,10 +81,14 @@ class MovieOrder extends BaseMovieOrder
 
     private function getMovie($id)
     {
+        $theMovie = null;
         foreach ($this->movies as $movie) {
             if ($id == $movie->getId()) {
-                return $movie;
+                $theMovie = $movie;
+                break;
             }
         }
+
+        return $theMovie;
     }
 }
