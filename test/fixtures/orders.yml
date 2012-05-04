@@ -1,0 +1,63 @@
+MovieOrder:
+
+    order_1:
+        Owner:      hhamon
+        reference:  MV-1234567
+        address:    92 boulevard victor hugo
+        country:    FR
+        zip_code:   92110
+        status:     confirmed
+        amount:     50
+        vat:        9.80
+        total:      59.80
+#        Items:      [ item_1, item_2 ]
+
+    order_2:
+        Owner:      hhamon
+        reference:  MV-7654321
+        address:    92 boulevard victor hugo
+        country:    FR
+        zip_code:   92110
+        status:     created
+        amount:     7
+        vat:        1.37
+        total:      8.37
+#        Items:      [ item_3 ]
+
+    order_3:
+        Owner:      jsmith
+        reference:  MV-1111111
+        address:    120 rue des Champs Elysées
+        country:    FR
+        zip_code:   75008
+        status:     created
+        amount:     15
+        vat:        2.94
+        total:      17.94
+#        Items:      [ item_4 ]
+
+MovieOrderItem:
+
+    item_1:
+        Movie:      movie_1
+        Order:      order_1
+        unit_price: 15
+        quantity:   2
+
+    item_2:
+        Movie:      movie_2
+        Order:      order_1
+        unit_price: 20
+        quantity:   1
+
+    item_3:
+        Movie:      movie_3
+        Order:      order_2
+        unit_price: 7
+        quantity:   1
+
+    item_4:
+        Movie:      movie_1
+        Order:      order_3
+        unit_price: 15
+        quantity:   1

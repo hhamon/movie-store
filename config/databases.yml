@@ -2,6 +2,7 @@ test:
   doctrine:
     param:
       dsn:      sqlite::memory
+      dsn:      mysql:host=localhost;dbname=sl_movie_store_test
 
 all:
   doctrine:

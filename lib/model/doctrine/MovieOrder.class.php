@@ -72,7 +72,7 @@ class MovieOrder extends BaseMovieOrder
             $movie = $this->getMovie($id);
 
             $item = new MovieOrderItem();
-            $item->setMovie($movie);
+            $item->setFilm($movie);
             $item->setQuantity($quantity);
 
             $this->Items->add($item);

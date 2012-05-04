@@ -12,7 +12,7 @@
  */
 class MovieOrderItem extends BaseMovieOrderItem
 {
-    public function setMovie(Movie $movie)
+    public function setFilm(Movie $movie)
     {
         $this->_set('Movie', $movie);
         $this->_set('unit_price', $movie->getPrice());

@@ -1,0 +1,71 @@
+Movie:
+
+  movie_1:
+    title: Titanic
+    synopsis: 'Southampton, 10 avril 1912. Le paquebot le plus grand et le plus moderne du monde, réputé pour son insubmersibilité, le "Titanic", appareille pour son premier voyage. Quatre jours plus tard, il heurte un iceberg. A son bord, un artiste pauvre et une grande bourgeoise tombent amoureux. '
+    director: 'James Cameron'
+    shot_year: '1997'
+    duration: '194'
+    support: dvd
+    type: romance
+    image: 645783e10f4dfbea1705f75557774a341ddaf0a4.jpg
+    price: '15.00'
+    created_at: '2012-05-02 16:23:18'
+    updated_at: '2012-05-02 16:23:18'
+    slug: titanic
+
+  movie_2:
+    title: Seven
+    synopsis: 'Pour conclure sa carrière, l''inspecteur Somerset, vieux flic blasé, tombe à sept jours de la retraite sur un criminel peu ordinaire. John Doe, c''est ainsi que se fait appeler l''assassin, a decidé de nettoyer la societé des maux qui la rongent en commettant sept meurtres basés sur les sept pechés capitaux: la gourmandise, l''avarice, la paresse, l''orgueil, la luxure, l''envie et la colère. '
+    director: 'David Fincher'
+    shot_year: '1995'
+    duration: '140'
+    support: blueray
+    type: thriller
+    image: 1760011b9162258eb106aacbad4d49c48b3d6cfa.jpg
+    price: '20.00'
+    created_at: '2012-05-02 16:25:34'
+    updated_at: '2012-05-02 16:25:34'
+    slug: seven
+
+  movie_3:
+    title: 'Qui veut la peau de Roger Rabbit ?'
+    synopsis: 'Roger Rabbit est au trente-sixième dessous. Autrefois sacré star du cinéma d''animation, le lapin blanc est fortement préoccupé pendant les tournages depuis qu''il soupçonne sa femme, la sublime Jessica Rabbit, de le tromper. Le studio qui emploie Roger décide d''engager un privé, Eddie Valliant, pour découvrir ce qui se cache derrière cette histoire bien plus complexe qu''il n''y parait ! '
+    director: 'Robert Zemeckis'
+    shot_year: '1988'
+    duration: '123'
+    support: vhs
+    type: cartoon
+    image: 9f18a505f0c0cb6ce2f6f6ec836b0f33479191e7.jpg
+    price: '7.00'
+    created_at: '2012-05-02 16:27:28'
+    updated_at: '2012-05-02 16:27:28'
+    slug: qui-veut-la-peau-de-roger-rabbit
+
+  movie_4:
+    title: 'Alien, le huitième passager '
+    synopsis: "Le vaisseau commercial Nostromo et son équipage, sept hommes et femmes, rentrent sur Terre avec une importante cargaison de minerai. Mais lors d'un arrêt forcé sur une planète déserte, l'officier Kane se fait agresser par une forme de vie inconnue, une arachnide qui étouffe son visage.\r\nAprès que le docteur de bord lui retire le spécimen, l'équipage retrouve le sourire et dîne ensemble. Jusqu'à ce que Kane, pris de convulsions, voit son abdomen perforé par un corps étranger vivant, qui s'échappe dans les couloirs du vaisseau... "
+    director: 'Ridley Scott'
+    shot_year: '1979'
+    duration: '116'
+    support: dvd
+    type: scifi
+    image: 9fa569ec22497d76752706f939173986093a000c.jpg
+    price: '13.90'
+    created_at: '2012-05-02 16:29:59'
+    updated_at: '2012-05-02 16:29:59'
+    slug: alien-le-huitieme-passager
+
+  movie_5:
+    title: 'Aliens le retour'
+    synopsis: 'Après 57 ans de dérive dans l''espace, Ellen Ripley est secourue par la corporation Weyland-Yutani. Malgré son rapport concernant l’incident survenu sur le Nostromo, elle n’est pas prise au sérieux par les militaires quant à la présence de xénomorphes sur la planète LV-426 où se posa son équipage… planète où plusieurs familles de colons ont été envoyées en mission de "terraformage". Après la disparition de ces derniers, Ripley décide d''accompagner une escouade de marines dans leur mission de sauvetage... et d’affronter à nouveau la Bête. '
+    director: 'James Cameron'
+    shot_year: '1985'
+    duration: '137'
+    support: dvd
+    type: scifi
+    image: 9f1df0034eff233fa7042b72d592562a2b22ae89.jpg
+    price: '13.90'
+    created_at: '2012-05-02 16:31:13'
+    updated_at: '2012-05-02 16:31:13'
+    slug: aliens-le-retour

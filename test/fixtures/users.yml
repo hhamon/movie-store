@@ -1,0 +1,17 @@
+sfGuardUser:
+
+    hhamon:
+        username:      hhamon
+        password:      secret
+        first_name:    Hugo
+        last_name:     Hamon
+        email_address: hugo@example.com
+        is_active:     1
+
+    jsmith:
+        username:      jsmith
+        password:      qwerty
+        first_name:    John
+        last_name:     Smith
+        email_address: jsmith@example.com
+        is_active:     1
